@@ -7,37 +7,37 @@
 
 export const brokerConfig = {
   // Company Info
-  companyName: "ProPlus Business Alliance",
+  companyName: "ABC Brokers",
   companySubtitle: "a Business Broker Development Group, LLC Company",
   parentCompany: "Business Broker Development Group, LLC",
 
   // Broker Info
-  brokerName: "Toby Barker",
+  brokerName: "John Smith",
   brokerTitle: "Principal Broker/Owner",
-  brokerPhone: "972-643-8075",
-  brokerPhoneDisplay: "972.643.8075",
-  brokerEmail: "toby@dallasbizbuysell.com",
-  brokerEmail2: "toby@bizbrokersuccess.com", // optional second email
+  brokerPhone: "555-1212",
+  brokerPhoneDisplay: "555-1212",
+  brokerEmail: "john@abcbrokers.com",
+  brokerEmail2: "", // optional second email
 
   // Location
-  location: "Dallas Fort Worth and Surrounding Areas, with Brokers Nationwide",
-  locationShort: "Dallas / Fort Worth, TX",
+  location: "Your City, ST",
+  locationShort: "Your City, ST",
 
   // Hero image path (upload your city skyline here)
-  heroImage: "/manus-storage/dallas_skyline_bright_defe7d62.jpg",
+  heroImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
 
   // Broker headshot (optional - leave empty string to hide)
-  brokerPhoto: "/manus-storage/toby_headshot_6eb5af2d.jpeg",
+  brokerPhoto: "",
 
   // Testimonial (optional)
   testimonial: {
     quote:
-      "The service we received from Toby @ ProPlus Business Alliance definitely exceeded any expectations. I would highly recommend Toby & ProPlus to any business owner who is entertaining their options or just curious about the value of their business. Our business sold in five months and for pretty close to the estimated value from our initial visit.",
-    author: "Joey G., Former Owner",
+      "Working with ProPlus Business Alliance made our business buying experience very enjoyable. The team was professional, confidential, and helped us find the right opportunity.",
+    author: "Richard and Darby P., Business Owners",
   },
 
   // "Become a Broker" link - links to your main site
-  becomeBrokerUrl: "http://www.bizbrokersuccess.com",
+  becomeBrokerUrl: "#",
 
   // Copyright year
   copyrightYear: "2026",
