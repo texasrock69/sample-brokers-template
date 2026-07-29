@@ -113,18 +113,18 @@ export default function Home() {
       </section>
 
       {/* ── TRUST METRICS BAR ── */}
-      <section className="bg-[#0a0a1a] border-b border-gray-800">
+      <section className="bg-[#00b4c8] border-b border-[#00b4c8]">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {trustMetrics.map((m, i) => (
               <div key={i} className="flex flex-col items-center">
                 <span
-                  className="text-[#00b4c8] font-extrabold text-2xl md:text-3xl"
+                  className="text-white font-extrabold text-2xl md:text-3xl"
                   style={{ fontFamily: "Raleway, sans-serif" }}
                 >
                   {m.value}
                 </span>
-                <span className="text-gray-400 text-xs mt-1 leading-tight">{m.label}</span>
+                <span className="text-white text-xs mt-1 leading-tight">{m.label}</span>
               </div>
             ))}
           </div>
