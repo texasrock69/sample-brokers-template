@@ -372,11 +372,11 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/sell">
-              <button className="btn-teal-solid px-8 py-3">Free Business Valuation</button>
+              <button className="btn-teal-solid px-8 py-3 font-semibold text-sm">Free Business Valuation</button>
             </Link>
             <Link href="/online-nda">
               <button
-                className="px-8 py-3 text-sm font-semibold border-2 border-white/40 text-white hover:border-white hover:bg-white/10 transition-all"
+                className="px-8 py-3 font-semibold text-sm border-2 border-white/40 text-white hover:border-white hover:bg-white/10 transition-all"
                 style={{ fontFamily: "Raleway, sans-serif", borderRadius: "2px" }}
               >
                 Complete Online NDA
