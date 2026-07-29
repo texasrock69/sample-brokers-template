@@ -24,7 +24,7 @@ export const brokerConfig = {
   locationShort: "Your City, ST",
 
   // Hero image path (upload your city skyline here)
-  heroImage: "https://images.unsplash.com/photo-1513581981697-5900d68a0c45?w=1200&q=80",
+  heroImage: "/manus-storage/Austin-texas-skyline-hd-wallpaper_b092007a.webp",
 
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
