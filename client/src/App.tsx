@@ -4,7 +4,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import ChatBot from "./components/ChatBot";
+
 import { useEffect } from "react";
 
 function ScrollToTop() {
@@ -55,7 +55,7 @@ function App() {
           <Toaster />
           <ScrollToTop />
           <Router />
-          <ChatBot />
+
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
