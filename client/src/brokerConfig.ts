@@ -24,7 +24,7 @@ export const brokerConfig = {
   locationShort: "Your City, ST",
 
   // Hero image path (upload your city skyline here)
-  heroImage: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=80",
+  heroImage: "https://images.unsplash.com/photo-1494145904049-0dca59b4bbad?w=1200&q=80",
 
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
