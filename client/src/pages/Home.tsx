@@ -1,40 +1,8 @@
 import { brokerConfig } from "@/brokerConfig";
 import Layout from "@/components/Layout";
-import { useEffect, useState } from "react";
 import { Link } from "wouter";
 
-const testimonials = [
-  {
-    quote:
-      "The service we received from Toby @ ProPlus Business Alliance definitely exceeded any expectations. I would highly recommend Toby & ProPlus to any business owner who is entertaining their options or just curious about the value of their business. Our business sold in five months and for pretty close to the estimated value from our initial visit.",
-    author: "Joey G.",
-    role: "Former Business Owner",
-    label: "Another Testimonial",
-    image: "/manus-storage/testimonial_joey_778975a2.jpg",
-    textSide: "left" as const,
-    // Joey: blurred office background — person is centered/right, text goes left
-  },
-  {
-    quote:
-      "I was looking to retire after thirty years, and gave myself a timeline that if my business didn't sell I was simply going to shut down. Toby and ProPlus Business Alliance was able to market and sell my business in less than three months! I couldn't be more satisfied with the professionalism that was displayed. Selling a business can be very emotional and Toby handled the transaction with white glove service from start to finish.",
-    author: "Ann G.",
-    role: "Former Business Owner",
-    label: "Former Business Owner",
-    image: "/manus-storage/testimonial_ann_0756a48f.jpg",
-    textSide: "left" as const,
-    // Ann: face is on the right side of the photo — text goes left
-  },
-  {
-    quote:
-      "Working with ProPlus Business Alliance made our business buying experience very enjoyable! Toby was able to consult with us on the process every step of the way. We were looking for a small business we could grow and build a legacy business for our family — we found just that and are now enjoying being small business owners.",
-    author: "Richard and Darby P.",
-    role: "Business Owners",
-    label: "What People Say",
-    image: "/manus-storage/testimonial_richard_d500dfa6.jpg",
-    textSide: "right" as const,
-    // Richard: man walking on bridge is on the left — text goes right
-  },
-];
+
 
 const trustMetrics = [
   { value: "6,000+", label: "Qualified Buyers in Network" },
@@ -89,138 +57,7 @@ const whyUs = [
   },
 ];
 
-function TestimonialCarousel() {
-  const [current, setCurrent] = useState(0);
-  const [animating, setAnimating] = useState(false);
-  const [direction, setDirection] = useState<"left" | "right">("left");
 
-  const goTo = (index: number, dir: "left" | "right") => {
-    if (animating) return;
-    setDirection(dir);
-    setAnimating(true);
-    setTimeout(() => {
-      setCurrent(index);
-      setAnimating(false);
-    }, 500);
-  };
-
-  const prev = () => goTo((current - 1 + testimonials.length) % testimonials.length, "right");
-  const next = () => goTo((current + 1) % testimonials.length, "left");
-
-  useEffect(() => {
-    const timer = setInterval(() => next(), 7000);
-    return () => clearInterval(timer);
-  }, [current]);
-
-  const t = testimonials[current];
-
-  // Gradient direction: if text is on left, fade from white-left to transparent-right; if right, reverse
-  const gradientStyle = t.textSide === "right"
-    ? "linear-gradient(to left, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0) 65%)"
-    : "linear-gradient(to right, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.3) 40%, rgba(255,255,255,0) 65%)";
-
-  return (
-    <section
-      className="relative overflow-hidden"
-      style={{ minHeight: "480px" }}
-    >
-      {/* Full-bleed background photo — full brightness, sharpened */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url(${t.image})`,
-          opacity: animating ? 0 : 1,
-          transition: "opacity 0.5s ease",
-          filter: "brightness(1.08) contrast(1.05) saturate(1.1)",
-        }}
-      />
-      {/* Gradient only on the text side — keeps photo bright on the person's side */}
-      <div className="absolute inset-0" style={{ background: gradientStyle }} />
-
-      {/* Full-width content row — text floats to correct side, person stays clear */}
-      <div
-        className="relative z-10 flex items-center py-16 px-8 md:px-16"
-        style={{
-          minHeight: "480px",
-          justifyContent: t.textSide === "right" ? "flex-end" : "flex-start",
-        }}
-      >
-        {/* Text block — max 45% width so it never reaches the person */}
-        <div style={{ maxWidth: "44%", minWidth: "280px" }}>
-          {/* Label */}
-          <p
-            className="text-xs uppercase tracking-[0.25em] font-bold mb-4"
-            style={{ fontFamily: "Raleway, sans-serif", color: "#0d2d3a" }}
-          >
-            {t.label}:
-          </p>
-
-          {/* Quote */}
-          <div
-            style={{
-              opacity: animating ? 0 : 1,
-              transform: animating
-                ? `translateX(${direction === "left" ? "-40px" : "40px"})`
-                : "translateX(0)",
-              transition: "opacity 0.5s ease, transform 0.5s ease",
-            }}
-          >
-            <blockquote
-              className="italic leading-relaxed mb-5"
-              style={{
-                fontFamily: "Raleway, sans-serif",
-                fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)",
-                color: "#0d1f2a",
-                fontWeight: 700,
-              }}
-            >
-              &ldquo;{t.quote}&rdquo;
-            </blockquote>
-            <cite className="not-italic">
-              <span
-                className="block text-sm font-extrabold"
-                style={{ fontFamily: "Raleway, sans-serif", color: "#0d2d3a" }}
-              >
-                -{t.author}, {t.role}
-              </span>
-            </cite>
-          </div>
-
-          {/* Dots + arrows */}
-          <div className="flex items-center gap-3 mt-8">
-            <button
-              onClick={prev}
-              className="w-8 h-8 rounded-full border flex items-center justify-center text-sm transition-colors"
-              style={{ borderColor: "rgba(0,0,0,0.35)", color: "rgba(0,0,0,0.55)" }}
-              aria-label="Previous"
-            >
-              &#8592;
-            </button>
-            <div className="flex gap-2">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => goTo(i, i > current ? "left" : "right")}
-                  className="w-2.5 h-2.5 rounded-full transition-all"
-                  style={{ background: i === current ? "#00b4c8" : "rgba(0,0,0,0.25)" }}
-                  aria-label={`Go to review ${i + 1}`}
-                />
-              ))}
-            </div>
-            <button
-              onClick={next}
-              className="w-8 h-8 rounded-full border flex items-center justify-center text-sm transition-colors"
-              style={{ borderColor: "rgba(0,0,0,0.35)", color: "rgba(0,0,0,0.55)" }}
-              aria-label="Next"
-            >
-              &#8594;
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function Home() {
   return (
@@ -499,8 +336,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TESTIMONIAL CAROUSEL ── */}
-      <TestimonialCarousel />
+
 
       {/* ── FINAL CTA ── */}
       <section
