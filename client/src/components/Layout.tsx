@@ -4,7 +4,6 @@ import { Link, useLocation } from "wouter";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Become a Broker", href: brokerConfig.becomeBrokerUrl, external: true },
   { label: "About", href: "/about" },
   {
     label: "Sell",
