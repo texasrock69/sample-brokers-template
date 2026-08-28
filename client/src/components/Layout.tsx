@@ -2,7 +2,14 @@ import { brokerConfig } from "@/brokerConfig";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 
-const navLinks = [
+type NavLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  children?: Array<{ label: string; href: string }>;
+};
+
+const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   {

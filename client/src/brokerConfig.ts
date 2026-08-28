@@ -23,8 +23,8 @@ export const brokerConfig = {
   location: "Your City, ST",
   locationShort: "Your City, ST",
 
-  // Hero image path (upload your city skyline here)
-  heroImage: "https://d2xsxph8kpxj0f.cloudfront.net/310519663670189393/CyjsmEsEsWvmZptTKwE6GF/broker-skyline-hero-6xwJa2na2U8d6PF7X7GLr6.webp",
+  // Hero image path (stored in this repository for Railway deployment)
+  heroImage: "/assets/sample-broker-hero.webp",
 
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
