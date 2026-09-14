@@ -2,13 +2,11 @@ import { brokerConfig } from "@/brokerConfig";
 import Layout from "@/components/Layout";
 import { Link } from "wouter";
 
-
-
 const trustMetrics = [
-  { value: "6,000+", label: "Qualified Buyers in Network" },
+  { value: brokerConfig.network.qualifiedBuyers, label: "Qualified Buyers in BBDG Network" },
   { value: "100%", label: "Performance Based — No Upfront Fees" },
   { value: "Free", label: "Confidential Business Valuation" },
-  { value: "30+", label: "Years of Combined Industry Experience" },
+  { value: brokerConfig.network.onlineMarketingPlatforms, label: "Online Marketing Platforms" },
 ];
 
 const processSteps = [
@@ -52,17 +50,14 @@ const whyUs = [
   },
   {
     icon: "🤝",
-    title: "No Sale, No Fee",
-    desc: "We only get paid when you do. Our 100% performance-based model means our success is completely aligned with yours.",
+    title: "BBDG Network Support",
+    desc: `Certified, trained, and supported by Business Broker Development Group, with access to ${brokerConfig.network.qualifiedBuyers} qualified buyers and broad online marketing exposure.`,
   },
 ];
-
-
 
 export default function Home() {
   return (
     <Layout>
-      {/* ── PARALLAX HERO ── */}
       <section
         className="parallax-hero"
         style={{ backgroundImage: `url(${brokerConfig.heroImage})` }}
@@ -89,15 +84,16 @@ export default function Home() {
               <br />
               <span style={{ color: "#00b4c8" }}>Is Our Business.</span>
             </h1>
-            <p className="text-white text-xl mb-8 max-w-xl leading-relaxed font-medium" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
+            <p className="text-white text-xl mb-4 max-w-xl leading-relaxed font-medium" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
               Experience matters. {brokerConfig.companyName} delivers confidential, results-driven
               representation for business owners ready to sell — and buyers ready to invest.
             </p>
+            <p className="text-white/85 text-sm mb-8 max-w-xl leading-relaxed" style={{ textShadow: "0 1px 8px rgba(0,0,0,0.6)" }}>
+              {brokerConfig.affiliationLine}
+            </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/sell">
-                <button className="btn-teal-solid px-8 py-3 text-sm">
-                  Get Your Free Valuation
-                </button>
+                <button className="btn-teal-solid px-8 py-3 text-sm">Get Your Free Valuation</button>
               </Link>
               <Link href="/online-nda">
                 <button
@@ -112,7 +108,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TRUST METRICS BAR ── */}
       <section className="bg-[#00b4c8] border-b border-[#00b4c8]">
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
@@ -131,21 +126,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── SELL / BUY SPLIT ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-0 border border-gray-200 rounded overflow-hidden shadow-sm">
-            {/* Sell */}
             <div className="p-10 border-b md:border-b-0 md:border-r border-gray-200">
-              <div className="w-10 h-10 rounded-full bg-[#e0f7fa] flex items-center justify-center mb-4">
-                <span className="text-[#00b4c8] text-lg">↑</span>
-              </div>
-              <h2
-                className="text-gray-900 font-bold text-2xl mb-3"
-                style={{ fontFamily: "Raleway, sans-serif" }}
-              >
-                Thinking About Selling?
-              </h2>
+              <div className="w-10 h-10 rounded-full bg-[#e0f7fa] flex items-center justify-center mb-4"><span className="text-[#00b4c8] text-lg">↑</span></div>
+              <h2 className="text-gray-900 font-bold text-2xl mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>Thinking About Selling?</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-sm">
                 You've built something valuable. We help you maximize that value with a confidential,
                 professional sale process — no upfront costs, no guesswork, no surprises.
@@ -154,36 +140,24 @@ export default function Home() {
                 {[
                   "Free, confidential business valuation",
                   "No upfront fees — 100% performance based",
-                  "Access to 6,000+ pre-qualified buyers",
+                  `Access to BBDG's ${brokerConfig.network.qualifiedBuyers} qualified buyer network`,
+                  brokerConfig.network.onlineMarketingDescription,
                   "Full confidentiality throughout the process",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                    <span className="text-[#00b4c8] mt-0.5 font-bold">✓</span>
-                    {item}
+                    <span className="text-[#00b4c8] mt-0.5 font-bold">✓</span>{item}
                   </li>
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3">
-                <Link href="/sell">
-                  <button className="btn-teal-solid text-sm">Get Free Valuation</button>
-                </Link>
-                <Link href="/selling">
-                  <button className="btn-teal text-sm">Learn More</button>
-                </Link>
+                <Link href="/sell"><button className="btn-teal-solid text-sm">Get Free Valuation</button></Link>
+                <Link href="/selling"><button className="btn-teal text-sm">Learn More</button></Link>
               </div>
             </div>
 
-            {/* Buy */}
             <div className="p-10 bg-gray-50">
-              <div className="w-10 h-10 rounded-full bg-[#e0f7fa] flex items-center justify-center mb-4">
-                <span className="text-[#00b4c8] text-lg">↓</span>
-              </div>
-              <h2
-                className="text-gray-900 font-bold text-2xl mb-3"
-                style={{ fontFamily: "Raleway, sans-serif" }}
-              >
-                Ready to Buy a Business?
-              </h2>
+              <div className="w-10 h-10 rounded-full bg-[#e0f7fa] flex items-center justify-center mb-4"><span className="text-[#00b4c8] text-lg">↓</span></div>
+              <h2 className="text-gray-900 font-bold text-2xl mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>Ready to Buy a Business?</h2>
               <p className="text-gray-500 leading-relaxed mb-6 text-sm">
                 Owning a business is one of the most powerful wealth-building decisions you can make.
                 We match serious buyers with the right opportunities — confidentially and efficiently.
@@ -196,145 +170,70 @@ export default function Home() {
                   "Financing resources available",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2 text-sm text-gray-500">
-                    <span className="text-[#00b4c8] mt-0.5 font-bold">✓</span>
-                    {item}
+                    <span className="text-[#00b4c8] mt-0.5 font-bold">✓</span>{item}
                   </li>
                 ))}
               </ul>
               <div className="flex flex-wrap gap-3">
-                <Link href="/listings">
-                  <button className="btn-teal-solid text-sm">View Business Listings</button>
-                </Link>
-                <Link href="/buy">
-                  <button className="btn-teal text-sm">Learn More</button>
-                </Link>
+                <Link href="/listings"><button className="btn-teal-solid text-sm">View Business Listings</button></Link>
+                <Link href="/buy"><button className="btn-teal text-sm">Learn More</button></Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── HOW IT WORKS ── */}
       <section className="py-20 bg-[#0a0a1a]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-14">
-            <p
-              className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-2"
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              The Process
-            </p>
-            <h2
-              className="text-white font-extrabold text-3xl"
-              style={{ fontFamily: "Raleway, sans-serif" }}
-            >
-              How We Sell Your Business
-            </h2>
+            <p className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-2" style={{ fontFamily: "Raleway, sans-serif" }}>The Process</p>
+            <h2 className="text-white font-extrabold text-3xl" style={{ fontFamily: "Raleway, sans-serif" }}>How We Sell Your Business</h2>
           </div>
           <div className="grid md:grid-cols-4 gap-6">
             {processSteps.map((s, idx) => (
               <div key={s.step} className="relative">
                 <div className="flex items-center gap-3 mb-4">
-                  <div
-                    className="text-4xl font-extrabold"
-                    style={{ color: "#00b4c8", fontFamily: "Raleway, sans-serif" }}
-                  >
-                    {s.step}
-                  </div>
-                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center text-white text-sm font-bold">
-                    ✓
-                  </div>
+                  <div className="text-4xl font-extrabold" style={{ color: "#00b4c8", fontFamily: "Raleway, sans-serif" }}>{s.step}</div>
+                  <div className="w-6 h-6 bg-green-500 rounded flex items-center justify-center text-white text-sm font-bold">✓</div>
                 </div>
-                <h3
-                  className="text-white font-bold text-lg mb-2"
-                  style={{ fontFamily: "Raleway, sans-serif" }}
-                >
-                  {s.title}
-                </h3>
+                <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: "Raleway, sans-serif" }}>{s.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">{s.desc}</p>
-                {/* connector line to next step */}
-                {idx < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 -right-3 w-6 h-px" style={{ borderTop: "2px dashed #00b4c8" }} />
-                )}
+                {idx < processSteps.length - 1 && <div className="hidden md:block absolute top-6 -right-3 w-6 h-px" style={{ borderTop: "2px dashed #00b4c8" }} />}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── WHY US ── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: About text */}
             <div>
-              <p
-                className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-2"
-                style={{ fontFamily: "Raleway, sans-serif" }}
-              >
-                Why {brokerConfig.companyName}
-              </p>
-              <h2
-                className="text-gray-900 font-extrabold text-3xl mb-4"
-                style={{ fontFamily: "Raleway, sans-serif", letterSpacing: "-0.01em" }}
-              >
-                We Don't Just List Businesses.
-                <br />
-                <span className="text-[#00b4c8]">We Represent Them.</span>
+              <p className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-2" style={{ fontFamily: "Raleway, sans-serif" }}>Why {brokerConfig.companyName}</p>
+              <h2 className="text-gray-900 font-extrabold text-3xl mb-4" style={{ fontFamily: "Raleway, sans-serif", letterSpacing: "-0.01em" }}>
+                We Don't Just List Businesses.<br /><span className="text-[#00b4c8]">We Represent Them.</span>
               </h2>
               <p className="text-gray-500 leading-relaxed mb-6">
-                Most brokers post your business on a website and wait for calls. We take a
-                fundamentally different approach — acting as your dedicated agent, understanding
-                the emotional weight of selling, and working proactively to find the right buyer
-                at the right price.
+                Most brokers post your business on a website and wait for calls. We take a fundamentally different approach — acting as your dedicated agent, understanding the emotional weight of selling, and working proactively to find the right buyer at the right price.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
-                Affiliated with Business Broker Development Group, LLC, {brokerConfig.companyName}{" "}
-                brings a proven, systematic process to every engagement — with confidentiality as
-                the non-negotiable foundation.
+                {brokerConfig.companyName} is {brokerConfig.affiliationLine.toLowerCase()}, bringing a proven, systematic process, the BBDG buyer network, and broad marketing distribution to every engagement.
               </p>
-
-              {/* Broker card */}
               <div className="flex items-center gap-4 p-4 border border-gray-200 rounded bg-gray-50">
-                {brokerConfig.brokerPhoto && (
-                  <img
-                    src={brokerConfig.brokerPhoto}
-                    alt={brokerConfig.brokerName}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-[#00b4c8]"
-                  />
-                )}
+                {brokerConfig.brokerPhoto && <img src={brokerConfig.brokerPhoto} alt={brokerConfig.brokerName} className="w-14 h-14 rounded-full object-cover border-2 border-[#00b4c8]" />}
                 <div>
-                  <div
-                    className="font-bold text-gray-800"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
-                  >
-                    {brokerConfig.brokerName}
-                  </div>
+                  <div className="font-bold text-gray-800" style={{ fontFamily: "Raleway, sans-serif" }}>{brokerConfig.brokerName}</div>
                   <div className="text-gray-500 text-xs mb-1">{brokerConfig.brokerTitle}</div>
-                  <a
-                    href={`tel:${brokerConfig.brokerPhone}`}
-                    className="text-[#00b4c8] text-sm font-semibold hover:underline"
-                  >
-                    {brokerConfig.brokerPhoneDisplay}
-                  </a>
+                  <a href={`tel:${brokerConfig.brokerPhone}`} className="text-[#00b4c8] text-sm font-semibold hover:underline">{brokerConfig.brokerPhoneDisplay}</a>
                 </div>
               </div>
             </div>
 
-            {/* Right: Why us grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {whyUs.map((item) => (
-                <div
-                  key={item.title}
-                  className="p-5 border border-gray-100 rounded bg-gray-50 hover:border-[#00b4c8] hover:shadow-sm transition-all"
-                >
+                <div key={item.title} className="p-5 border border-gray-100 rounded bg-gray-50 hover:border-[#00b4c8] hover:shadow-sm transition-all">
                   <div className="text-2xl mb-3">{item.icon}</div>
-                  <h3
-                    className="font-bold text-gray-800 mb-2 text-sm"
-                    style={{ fontFamily: "Raleway, sans-serif" }}
-                  >
-                    {item.title}
-                  </h3>
+                  <h3 className="font-bold text-gray-800 mb-2 text-sm" style={{ fontFamily: "Raleway, sans-serif" }}>{item.title}</h3>
                   <p className="text-gray-500 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               ))}
@@ -343,52 +242,18 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* ── FINAL CTA ── */}
-      <section
-        className="py-20 text-center"
-        style={{
-          background: "linear-gradient(135deg, #0a0a1a 0%, #0d2030 100%)",
-        }}
-      >
+      <section className="py-20 text-center" style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #0d2030 100%)" }}>
         <div className="max-w-2xl mx-auto px-4">
-          <p
-            className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-3"
-            style={{ fontFamily: "Raleway, sans-serif" }}
-          >
-            Ready to Get Started?
-          </p>
-          <h2
-            className="text-white font-extrabold text-3xl mb-4"
-            style={{ fontFamily: "Raleway, sans-serif", letterSpacing: "-0.01em" }}
-          >
-            Your Next Chapter Starts With a Conversation.
-          </h2>
+          <p className="text-[#00b4c8] text-xs uppercase tracking-[0.2em] font-semibold mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>Ready to Get Started?</p>
+          <h2 className="text-white font-extrabold text-3xl mb-4" style={{ fontFamily: "Raleway, sans-serif", letterSpacing: "-0.01em" }}>Your Next Chapter Starts With a Conversation.</h2>
           <p className="text-gray-400 mb-8 leading-relaxed">
-            Whether you're selling a business you've built over decades or looking for your next
-            investment, {brokerConfig.brokerName} is ready to help — confidentially, professionally,
-            and at no upfront cost.
+            Whether you're selling a business you've built over decades or looking for your next investment, {brokerConfig.brokerName} is ready to help — confidentially, professionally, and at no upfront cost.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Link href="/sell">
-              <button className="btn-teal-solid px-8 py-3 font-semibold text-sm">Free Business Valuation</button>
-            </Link>
-            <Link href="/online-nda">
-              <button className="btn-teal px-8 py-3 font-semibold text-sm" style={{ color: "white", borderColor: "white", backgroundColor: "transparent" }}>
-                Complete Online NDA
-              </button>
-            </Link>
+            <Link href="/sell"><button className="btn-teal-solid px-8 py-3 font-semibold text-sm">Free Business Valuation</button></Link>
+            <Link href="/online-nda"><button className="btn-teal px-8 py-3 font-semibold text-sm" style={{ color: "white", borderColor: "white", backgroundColor: "transparent" }}>Complete Online NDA</button></Link>
           </div>
-          <p className="text-gray-500 text-xs mt-6">
-            Or call directly:{" "}
-            <a
-              href={`tel:${brokerConfig.brokerPhone}`}
-              className="text-[#00b4c8] hover:underline font-semibold"
-            >
-              {brokerConfig.brokerPhoneDisplay}
-            </a>
-          </p>
+          <p className="text-gray-500 text-xs mt-6">Or call directly: <a href={`tel:${brokerConfig.brokerPhone}`} className="text-[#00b4c8] hover:underline font-semibold">{brokerConfig.brokerPhoneDisplay}</a></p>
         </div>
       </section>
     </Layout>
