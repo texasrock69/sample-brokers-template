@@ -40,11 +40,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Header */}
       <header className="site-header sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between py-3">
-            {/* Logo / Company Name */}
             <Link href="/" className="flex flex-col no-underline">
               <span
                 className="text-white font-bold leading-tight"
@@ -55,7 +53,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="text-gray-400 text-xs mt-0.5">{brokerConfig.locationShort}</span>
             </Link>
 
-            {/* Broker info - desktop */}
             <div className="hidden md:flex flex-col items-end text-right">
               <span
                 className="font-semibold"
@@ -66,7 +63,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <span className="text-gray-300 text-sm">{brokerConfig.brokerPhone}</span>
             </div>
 
-            {/* Mobile hamburger */}
             <button
               className="md:hidden text-white p-2"
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -78,7 +74,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </button>
           </div>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center border-t border-gray-700">
             {navLinks.map((link) => (
               <div
@@ -111,7 +106,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </Link>
                 )}
 
-                {/* Dropdown */}
                 {link.children && openDropdown === link.label && (
                   <div className="absolute top-full left-0 bg-[#0a0a1a] border border-gray-700 min-w-48 shadow-xl z-50">
                     {link.children.map((child) => (
@@ -131,9 +125,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
 
-        {/* Mobile Nav */}
         {mobileOpen && (
-          <nav className="md:hidden border-t border-gray-700 bg-[#0a0a1a] overflow-y-auto" style={{ maxHeight: "calc(100dvh - 72px)" }}>
+          <nav
+            className="md:hidden border-t border-gray-700 bg-[#0a0a1a] overflow-y-auto"
+            style={{ maxHeight: "calc(100dvh - 72px)" }}
+          >
             {navLinks.map((link) => (
               <div key={link.label}>
                 {link.external ? (
@@ -181,14 +177,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         )}
       </header>
 
-      {/* Page Content */}
       <main className="flex-1">{children}</main>
 
-      {/* Footer */}
       <footer className="site-header pt-12 pb-6">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
-            {/* Brand */}
             <div className="md:col-span-1">
               <div
                 className="text-white font-bold text-lg mb-1"
@@ -197,12 +190,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 {brokerConfig.companyName}
               </div>
               <div className="text-sm text-gray-300 mb-4">{brokerConfig.companySubtitle}</div>
-              <p className="text-sm text-gray-300 leading-relaxed">
+              <p className="text-sm text-gray-300 leading-relaxed mb-3">
                 Professional business brokerage services for buyers and sellers in {brokerConfig.locationShort} and beyond.
               </p>
+              <p className="text-xs text-gray-400 leading-relaxed">{brokerConfig.affiliationLine}</p>
             </div>
 
-            {/* For Sellers */}
             <div>
               <div className="text-white text-base font-bold mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>For Sellers</div>
               <div className="space-y-2">
@@ -212,7 +205,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* For Buyers */}
             <div>
               <div className="text-white text-base font-bold mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>For Buyers</div>
               <div className="space-y-2">
@@ -222,7 +214,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
             </div>
 
-            {/* Contact */}
             <div>
               <div className="text-white text-base font-bold mb-3" style={{ fontFamily: "Raleway, sans-serif" }}>Contact</div>
               <div className="space-y-2 text-sm">
@@ -236,7 +227,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
           <div className="border-t border-gray-800 pt-5 flex flex-col md:flex-row items-center justify-between gap-2">
             <div className="text-sm text-gray-300">
-              &copy; {brokerConfig.copyrightYear} {brokerConfig.parentCompany}. All rights reserved.
+              &copy; {brokerConfig.copyrightYear} {brokerConfig.companyName}. All rights reserved.
             </div>
             <div className="text-sm text-gray-300">
               Business Brokerage Services &middot; {brokerConfig.locationShort}
