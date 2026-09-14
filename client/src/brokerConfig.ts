@@ -52,10 +52,9 @@ export const brokerConfig = {
 
   // Forms
   // Keep current Web3Forms behavior until a 123FormBuilder form is ready.
-  // When a broker gets a 123FormBuilder NDA or seller form, add its URL here
-  // and switch the corresponding mode in that page implementation.
+  // Update recipientEmail when provisioning each real broker site.
   forms: {
-    recipientEmail: "john@abcbrokers.com",
+    recipientEmail: "toby@dallasbizbuysell.com",
     nda: {
       mode: "web3" as "web3" | "123formbuilder",
       formUrl: "",
