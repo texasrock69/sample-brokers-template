@@ -1,15 +1,18 @@
 /**
  * BROKER CONFIGURATION FILE
  * ===========================
- * To set up a new broker site, simply update the values below.
- * All pages pull their broker-specific information from this single file.
+ * To set up a new broker site, update the values below.
+ * Broker-specific branding, contact information, market, SEO, images,
+ * marketing credentials, and form settings should live here.
  */
 
 export const brokerConfig = {
   // Company Info
   companyName: "ABC Brokers",
-  companySubtitle: "a Business Broker Development Group, LLC Company",
+  companySubtitle: "Certified, Trained & Supported by Business Broker Development Group, LLC",
   parentCompany: "Business Broker Development Group, LLC",
+  affiliationLine:
+    "Certified, trained, supported, and affiliated with Business Broker Development Group, LLC",
 
   // Broker Info
   brokerName: "John Smith",
@@ -28,6 +31,40 @@ export const brokerConfig = {
 
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
+
+  // BBDG network and marketing credentials used throughout the broker site.
+  // These are network-level capabilities, not claims about the individual broker.
+  network: {
+    qualifiedBuyers: "6,000+",
+    onlineMarketingPlatforms: "150+",
+    onlineMarketingDescription:
+      "Marketing exposure through BizBuySell and 150+ additional online platforms",
+  },
+
+  // SEO / sharing defaults. Update these for each broker and custom domain.
+  seo: {
+    title: "ABC Brokers | Business Brokerage in Your City, ST",
+    description:
+      "Confidential business brokerage services for buyers and sellers in Your City, ST. Certified, trained, and supported by Business Broker Development Group, LLC.",
+    canonicalUrl: "", // e.g. https://www.abcbrokers.com
+    socialImage: "/assets/sample-broker-hero.webp",
+  },
+
+  // Forms
+  // Keep current Web3Forms behavior until a 123FormBuilder form is ready.
+  // When a broker gets a 123FormBuilder NDA or seller form, add its URL here
+  // and switch the corresponding mode in that page implementation.
+  forms: {
+    recipientEmail: "john@abcbrokers.com",
+    nda: {
+      mode: "web3" as "web3" | "123formbuilder",
+      formUrl: "",
+    },
+    sellerConsult: {
+      mode: "web3" as "web3" | "123formbuilder",
+      formUrl: "",
+    },
+  },
 
   // Testimonial (optional)
   testimonial: {
