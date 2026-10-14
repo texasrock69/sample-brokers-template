@@ -5,12 +5,12 @@ import { brokerConfig } from "./brokerConfig";
 
 describe("sample broker media configuration", () => {
   it("uses a repository-local hero asset instead of a Manus-linked URL", () => {
-    expect(brokerConfig.heroImage).toBe("/assets/sample-broker-hero.webp");
+    expect(brokerConfig.heroImage).toBe("/assets/philadelphia-skyline.webp");
     expect(brokerConfig.heroImage).not.toContain("manus");
     expect(brokerConfig.heroImage).not.toContain("cloudfront");
 
     const imagePath = fileURLToPath(
-      new URL("../public/assets/sample-broker-hero.webp", import.meta.url),
+      new URL("../public/assets/philadelphia-skyline.webp", import.meta.url),
     );
     expect(existsSync(imagePath)).toBe(true);
   });
