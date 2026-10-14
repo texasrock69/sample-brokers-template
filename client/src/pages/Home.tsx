@@ -65,9 +65,9 @@ export default function Home() {
       {/* ── PARALLAX HERO ── */}
       <section
         className="parallax-hero"
-        style={{ backgroundImage: `url(${brokerConfig.heroImage})` }}
+        style={{ backgroundImage: `url(${brokerConfig.heroImage})`, backgroundAttachment: "scroll", backgroundPosition: "center 60%" }}
       >
-        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.35) 55%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 60%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(0,0,0,0.38) 0%, rgba(0,0,0,0.12) 45%, rgba(0,0,0,0) 100%), linear-gradient(to top, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 45%)" }} />
         <div className="hero-inner">
           <div className="max-w-2xl">
             <p
@@ -110,6 +110,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <p className="absolute bottom-2 right-3 z-20 rounded bg-black/40 px-2 py-1 text-[10px] text-white/90">Photo: <a className="underline" href="https://commons.wikimedia.org/wiki/File:Philadelphia_skyline_20240528_(cropped).jpg" target="_blank" rel="noopener noreferrer">颐园居 / Wikimedia Commons</a> · <a className="underline" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> · WebP conversion</p>
       </section>
 
       {/* ── TRUST METRICS BAR ── */}

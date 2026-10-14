@@ -30,7 +30,7 @@ export const brokerConfig = {
   locationShort: "Philadelphia and Surrounding Areas",
 
   // Hero image path (stored in this repository for Railway deployment)
-  heroImage: "/assets/philadelphia-skyline.webp",
+  heroImage: "/assets/philadelphia-daylight.webp",
 
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
