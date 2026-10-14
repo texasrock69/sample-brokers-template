@@ -1,27 +1,8 @@
 import Layout from "@/components/Layout";
-import { useEffect, useRef } from "react";
+import { brokerConfig } from "@/brokerConfig";
+import BrokerForm from "@/components/BrokerForm";
 
 export default function OnlineNDA() {
-  const formContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = formContainerRef.current;
-    if (!container) return;
-
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.defer = true;
-    script.src = "https://form.123formbuilder.com/embed/6984364.js";
-    script.setAttribute("data-role", "form");
-    script.setAttribute("data-default-width", "800px");
-    script.setAttribute("data-custom-vars", "hasEmbedFormStyle=1");
-    container.appendChild(script);
-
-    return () => {
-      container.replaceChildren();
-    };
-  }, []);
-
   return (
     <Layout>
       {/* Page Header */}
@@ -51,7 +32,7 @@ export default function OnlineNDA() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-12">
-        <div ref={formContainerRef} className="w-full min-w-0" />
+        <BrokerForm formId={brokerConfig.ndaFormId} purpose="NDA" />
       </div>
     </Layout>
   );

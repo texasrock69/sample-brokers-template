@@ -7,21 +7,27 @@
 
 export const brokerConfig = {
   // Company Info
-  companyName: "ABC Brokers",
+  companyName: "Main Street Business Brokers",
   companySubtitle: "a Business Broker Development Group, LLC Company",
   parentCompany: "Business Broker Development Group, LLC",
 
   // Broker Info
-  brokerName: "John Smith",
+  brokerName: "Alecia Lue",
   brokerTitle: "Principal Broker/Owner",
-  brokerPhone: "555-1212",
-  brokerPhoneDisplay: "555-1212",
-  brokerEmail: "john@abcbrokers.com",
+  brokerPhone: "215-272-4336",
+  brokerPhoneDisplay: "215-272-4336",
+  brokerEmail: "alecia@mainstreetbbrokers.com",
   brokerEmail2: "", // optional second email
 
+  websiteUrl: "https://www.mainstreetbbrokers.com",
+
+  // Form IDs are added after the broker-specific forms are supplied.
+  ndaFormId: "",
+  sellerFormId: "",
+
   // Location
-  location: "Your City, ST",
-  locationShort: "Your City, ST",
+  location: "Philadelphia and Surrounding Areas",
+  locationShort: "Philadelphia and Surrounding Areas",
 
   // Hero image path (stored in this repository for Railway deployment)
   heroImage: "/assets/sample-broker-hero.webp",
@@ -29,12 +35,8 @@ export const brokerConfig = {
   // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
 
-  // Testimonial (optional)
-  testimonial: {
-    quote:
-      "Working with ProPlus Business Alliance made our business buying experience very enjoyable. The team was professional, confidential, and helped us find the right opportunity.",
-    author: "Richard and Darby P., Business Owners",
-  },
+  // No broker-specific testimonial has been supplied.
+  testimonial: null as { quote: string; author: string } | null,
 
   // "Become a Broker" link - links to your main site
   becomeBrokerUrl: "#",

@@ -228,6 +228,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="space-y-2 text-sm">
                 <div className="text-white font-semibold">{brokerConfig.brokerName}</div>
                 <div className="text-gray-300">{brokerConfig.brokerTitle}</div>
+                <span className="block text-gray-300">www.mainstreetbbrokers.com</span>
                 <a href={`tel:${brokerConfig.brokerPhone}`} className="block text-[#00b4c8] hover:underline font-semibold">{brokerConfig.brokerPhoneDisplay}</a>
                 <a href={`mailto:${brokerConfig.brokerEmail}`} className="block text-gray-300 hover:text-[#00b4c8] transition-colors break-all">{brokerConfig.brokerEmail}</a>
               </div>

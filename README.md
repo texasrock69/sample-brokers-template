@@ -1,15 +1,14 @@
-# BBDG Sample Broker Website
+# Main Street Business Brokers
 
-This repository is a reusable business-broker website template for deployment on Railway. It is a standard React, Vite, Tailwind, and Express project with no platform-specific authentication, storage, database, or AI-service dependencies.
+Separate Philadelphia broker site for Alecia Lue, copied from BBDG Sample Broker Website.
 
-## Customizing a Broker Site
+Contact: 215-272-4336 · alecia@mainstreetbbrokers.com
+Domain: www.mainstreetbbrokers.com
 
-Update `client/src/brokerConfig.ts` for the broker’s company name, contact information, city, and hero skyline. The hero image is stored in `client/public/assets/` and is served by Railway at `/assets/...`.
+## Review status
 
-## Local Development
+The original template skyline is retained until the Philadelphia photograph is supplied. Both form IDs in client/src/brokerConfig.ts are empty until Alecia-specific 123 Form Builder codes are supplied. Contact links are shown in their place; no submission is sent to the sample broker. Preview pages are marked noindex until launch. The template's shared BBDG listings remain unchanged.
 
-Install dependencies with `pnpm install`, then start the site with `pnpm dev`. Use `pnpm test` for the configuration test and `pnpm run build` to create the Railway-ready production build.
+## Development and hosting
 
-## Hosting
-
-Railway builds the site with `pnpm run build` and starts the included Express static server with `pnpm start`. Form submissions use Web3Forms directly from the browser; set the desired recipient email and Web3Forms access key in the relevant form pages before using this template for a new broker.
+Use pnpm 10.4.1. Install with pnpm install --frozen-lockfile, verify with pnpm run check and pnpm test, and build with pnpm run build. Railway runs pnpm start. Update client/src/brokerConfig.ts for broker identity, skyline path, and NDA/seller form IDs.
