@@ -1,3 +1,5 @@
+import { clevelandHero } from "@/assets/clevelandHeroData";
+
 /**
  * BROKER CONFIGURATION FILE
  * ===========================
@@ -23,7 +25,7 @@ export const brokerConfig = {
   locationShort: "Cleveland, OH",
 
   // Cleveland skyline hero image
-  heroImage: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Cleveland_Skyline_Night.jpg",
+  heroImage: clevelandHero,
 
   // Broker headshot (optional)
   brokerPhoto: "",
