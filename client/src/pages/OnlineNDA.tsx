@@ -11,7 +11,7 @@ export default function OnlineNDA() {
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.defer = true;
-    script.src = "https://form.123formbuilder.com/embed/6984364.js";
+    script.src = "https://form.123formbuilder.com/embed/6987916.js";
     script.setAttribute("data-role", "form");
     script.setAttribute("data-default-width", "800px");
     script.setAttribute("data-custom-vars", "hasEmbedFormStyle=1");
@@ -24,7 +24,6 @@ export default function OnlineNDA() {
 
   return (
     <Layout>
-      {/* Page Header */}
       <div
         className="py-16 px-4"
         style={{ background: "linear-gradient(135deg, #0a0a1a 0%, #0d2030 100%)" }}
