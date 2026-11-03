@@ -23,7 +23,7 @@ export const brokerConfig = {
   locationShort: "Cleveland, OH",
 
   // Cleveland skyline hero image
-  heroImage: "https://upload.wikimedia.org/wikipedia/commons/3/32/Cleveland_skyline%2C_May_2025_cropped.jpg",
+  heroImage: "https://www.odoo.com/web/image/126795160-5fa0ea4f/Event%20%27Cleveland%2C%20OH%20Business%20Show%27%20cover%20image.webp",
 
   // Broker headshot (optional)
   brokerPhoto: "",
