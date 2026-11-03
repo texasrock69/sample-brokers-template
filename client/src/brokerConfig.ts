@@ -1,43 +1,42 @@
 /**
  * BROKER CONFIGURATION FILE
  * ===========================
- * To set up a new broker site, simply update the values below.
- * All pages pull their broker-specific information from this single file.
+ * Broker-specific information for Excel Business Brokers.
  */
 
 export const brokerConfig = {
   // Company Info
-  companyName: "ABC Brokers",
+  companyName: "Excel Business Brokers",
   companySubtitle: "a Business Broker Development Group, LLC Company",
   parentCompany: "Business Broker Development Group, LLC",
 
   // Broker Info
-  brokerName: "John Smith",
-  brokerTitle: "Principal Broker/Owner",
-  brokerPhone: "555-1212",
-  brokerPhoneDisplay: "555-1212",
-  brokerEmail: "john@abcbrokers.com",
-  brokerEmail2: "", // optional second email
+  brokerName: "Don Stuczynski",
+  brokerTitle: "Broker/Partner",
+  brokerPhone: "330-671-2630",
+  brokerPhoneDisplay: "330-671-2630",
+  brokerEmail: "Don@excelbizbrokers.com",
+  brokerEmail2: "",
 
   // Location
-  location: "Your City, ST",
-  locationShort: "Your City, ST",
+  location: "Cleveland, OH",
+  locationShort: "Cleveland, OH",
 
-  // Hero image path (stored in this repository for Railway deployment)
-  heroImage: "/assets/sample-broker-hero.webp",
+  // Cleveland skyline hero image
+  heroImage: "https://upload.wikimedia.org/wikipedia/commons/3/32/Cleveland_skyline%2C_May_2025_cropped.jpg",
 
-  // Broker headshot (optional - leave empty string to hide)
+  // Broker headshot (optional)
   brokerPhoto: "",
 
   // Testimonial (optional)
   testimonial: {
     quote:
-      "Working with ProPlus Business Alliance made our business buying experience very enjoyable. The team was professional, confidential, and helped us find the right opportunity.",
-    author: "Richard and Darby P., Business Owners",
+      "Professional, confidential guidance from first conversation through closing — focused on helping business owners and buyers reach the right outcome.",
+    author: "Excel Business Brokers",
   },
 
-  // "Become a Broker" link - links to your main site
-  becomeBrokerUrl: "#",
+  // "Become a Broker" link
+  becomeBrokerUrl: "https://www.bizbrokersuccess.com",
 
   // Copyright year
   copyrightYear: "2026",
