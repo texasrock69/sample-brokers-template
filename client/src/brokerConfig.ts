@@ -14,8 +14,8 @@ export const brokerConfig = {
   // Broker Info
   brokerName: "Alecia Lue",
   brokerTitle: "Principal Broker/Owner",
-  brokerPhone: "215-272-4336",
-  brokerPhoneDisplay: "215-272-4336",
+  brokerPhone: "267-225-6904",
+  brokerPhoneDisplay: "(267) 225-6904",
   brokerEmail: "alecia@mainstreetbbrokers.com",
   brokerEmail2: "", // optional second email
 
