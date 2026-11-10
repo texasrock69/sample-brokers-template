@@ -1,48 +1,37 @@
 /**
  * BROKER CONFIGURATION FILE
  * ===========================
- * To set up a new broker site, simply update the values below.
- * All pages pull their broker-specific information from this single file.
+ * Premier Business Brokers - Boston, MA
  */
 
 export const brokerConfig = {
-  // Company Info
-  companyName: "ABC Brokers",
+  companyName: "Premier Business Brokers",
   companySubtitle: "a Business Broker Development Group, LLC Company",
   parentCompany: "Business Broker Development Group, LLC",
 
-  // Broker Info
-  brokerName: "John Smith",
-  brokerTitle: "Principal Broker/Owner",
-  brokerPhone: "555-1212",
-  brokerPhoneDisplay: "555-1212",
-  brokerEmail: "john@abcbrokers.com",
-  brokerEmail2: "", // optional second email
+  brokerName: "Wayne Finnegan",
+  brokerTitle: "Broker/Owner",
+  brokerPhone: "6178947321",
+  brokerPhoneDisplay: "617.894.7321",
+  brokerEmail: "Wayne@premier-bb.com",
+  brokerEmail2: "",
 
-  // Location
-  location: "Your City, ST",
-  locationShort: "Your City, ST",
+  location: "Boston, MA and surrounding areas",
+  locationShort: "Boston, MA and surrounding areas",
 
-  // Hero image path (stored in this repository for Railway deployment)
-  heroImage: "/assets/sample-broker-hero.webp",
+  heroImage: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Boston%20Harbor%20Skyline.jpg",
 
-  // Broker headshot (optional - leave empty string to hide)
   brokerPhoto: "",
 
-  // Testimonial (optional)
   testimonial: {
     quote:
-      "Working with ProPlus Business Alliance made our business buying experience very enjoyable. The team was professional, confidential, and helped us find the right opportunity.",
-    author: "Richard and Darby P., Business Owners",
+      "Professional, confidential guidance from first conversation through closing — focused on helping business owners and buyers reach the right outcome.",
+    author: "Premier Business Brokers",
   },
 
-  // "Become a Broker" link - links to your main site
-  becomeBrokerUrl: "#",
-
-  // Copyright year
+  becomeBrokerUrl: "https://www.bizbrokersuccess.com",
   copyrightYear: "2026",
 
-  // Stats shown in the teal bar on homepage
   stats: [
     "FREE BUSINESS VALUATION",
     "NO UPFRONT FEES · 100% PERFORMANCE BASED",
