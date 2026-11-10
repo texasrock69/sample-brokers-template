@@ -19,7 +19,7 @@ export const brokerConfig = {
   location: "Boston, MA and surrounding areas",
   locationShort: "Boston, MA and surrounding areas",
 
-  heroImage: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Boston%20Harbor%20Skyline.jpg",
+  heroImage: "/assets/premier-boston-hero.webp",
 
   brokerPhoto: "",
 
